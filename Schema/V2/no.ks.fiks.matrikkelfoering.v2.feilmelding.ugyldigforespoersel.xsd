@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://rep.geointegrasjon.no/Matrikkel/feilmelding/ugyldigforespoersel/v2"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+			xmlns:feilmeldingBase="http://rep.geointegrasjon.no/Matrikkel/feilmelding/feilmeldingbase/v2"
+			targetNamespace="http://rep.geointegrasjon.no/Matrikkel/feilmelding/ugyldigforespoersel/v2"
+			elementFormDefault="qualified">
+
+	<xs:import namespace="http://rep.geointegrasjon.no/Matrikkel/feilmelding/feilmeldingbase/v2"
+			   schemaLocation="./feilmeldingBase.xsd"/>
+
+	<xs:element name="ugyldigforespoersel" type="feilmeldingBase:feilmelding" />
+
+</xs:schema>

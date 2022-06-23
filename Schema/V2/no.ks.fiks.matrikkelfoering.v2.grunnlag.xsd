@@ -4,7 +4,7 @@
   <!-- -manually made VarmefordelingListe, EnergiforsyningTypeListe 31.03.2022-->
   <!-- -manually fixed types 31.03.2022-->
   <!-- -manually fixed references to Geometri 31.03.2022-->
-  <xs:import namespace="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31" schemaLocation="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31/giFellesGeometri20120131.xsd"/>
+  <xs:import namespace="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31" schemaLocation="giFellesGeometri20120131.xsd"/>
   <xs:element name="Adresse" type="mf:AdresseType"/>
   <xs:complexType name="AdresseListe">
     <xs:sequence>

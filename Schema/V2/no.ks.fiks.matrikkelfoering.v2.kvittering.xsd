@@ -1,14 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.geointegrasjon.no/Matrikkel/foeringskvittering/v2" xmlns:mf="http://rep.geointegrasjon.no/Matrikkel/foering/v2" elementFormDefault="qualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
-	
+
 	<xs:element name="KvitteringMatrikkel" type="KvitteringMatrikkelType"/>
 	<xs:element name="Saksnummer" type="SaksnummerType"/>
-
-	<xs:complexType name="KvitteringMatrikkelListe">
-		<xs:sequence>
-			<xs:element name="kvitteringmatrikkel" type="KvitteringMatrikkelType" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
 
 	<xs:complexType name="KvitteringMatrikkelType">
 		<xs:sequence>
@@ -19,20 +13,20 @@
 			<xs:element name="byggIdent" minOccurs="0" maxOccurs="1" nillable="true" type="mf:ByggIdentListe"/>
 		</xs:sequence>
 	</xs:complexType>
-	
+
 	<xs:complexType name="SaksnummerListe">
 		<xs:sequence>
 			<xs:element name="saksnummer" type="SaksnummerType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	
+
 	<xs:complexType name="SaksnummerType">
 		<xs:sequence>
 			<xs:element name="saksaar" minOccurs="1" maxOccurs="1" type="xs:integer"/>
 			<xs:element name="sakssekvensnummer" minOccurs="1" maxOccurs="1" type="xs:integer"/>
 		</xs:sequence>
 	</xs:complexType>
-	
+
 	<xs:simpleType name="StatusTypeType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="velykket"/>
@@ -41,10 +35,5 @@
 			<xs:enumeration value="manglendeOpplysninger"/>
 		</xs:restriction>
 	</xs:simpleType>
-	
-	<xs:complexType name="StatusTypeListe">
-		<xs:sequence>
-			<xs:element name="statustype" type="StatusTypeType" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
+
 </xs:schema>

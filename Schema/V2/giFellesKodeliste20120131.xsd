@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="http://rep.geointegrasjon.no/Felles/Kodeliste/xml.schema/2012.01.31" 
-		   xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns:tns="http://rep.geointegrasjon.no/Felles/Kodeliste/xml.schema/2012.01.31"
 		   xmlns:planbasisns="http://rep.geointegrasjon.no/Plan/Basis/xml.schema/2012.01.31" 
 		   xmlns:planfellesns="http://rep.geointegrasjon.no/Plan/Felles/xml.schema/2012.01.31" 
 		   xmlns:planutvidetns="http://rep.geointegrasjon.no/Plan/Utvidet/xml.schema/2012.01.31" 

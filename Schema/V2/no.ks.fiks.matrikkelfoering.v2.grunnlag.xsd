@@ -35,8 +35,8 @@
   </xs:complexType>
   <xs:complexType name="BruksenhetType">
     <xs:sequence>
-      <xs:element name="bruksenhetsnummer" minOccurs="1" maxOccurs="1" type="mf:BruksenhetsnummerType"/>
-      <xs:element name="bruksenhetstype" minOccurs="0" maxOccurs="1" nillable="true" type="mf:BruksenhetstypeKodeType"/>
+      <xs:element name="bruksenhetsnummer" minOccurs="0" maxOccurs="1" type="mf:BruksenhetsnummerType"/>
+      <xs:element name="bruksenhetstype" minOccurs="1" maxOccurs="1" nillable="true" type="mf:BruksenhetstypeKodeType"/>
       <xs:element name="bruksareal" minOccurs="0" maxOccurs="1" nillable="true" type="xs:double"/>
       <xs:element name="kjoekkentilgang" minOccurs="0" maxOccurs="1" nillable="true" type="mf:KjoekkentilgangKodeType"/>
       <xs:element name="antallRom" minOccurs="0" maxOccurs="1" nillable="true" type="xs:integer"/>

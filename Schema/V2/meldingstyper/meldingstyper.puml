@@ -1,3 +1,4 @@
+@startjson
 {
   "protokollnavn": "no.ks.fiks.matrikkelfoering",
   "versjon": "v2",
@@ -52,3 +53,4 @@
     }
   ]
 }
+@endjson

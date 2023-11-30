@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-           targetNamespace="http://rep.geointegrasjon.no/Matrikkel/foeringstatussvar/v2" 
-           xmlns:ms="http://rep.geointegrasjon.no/Matrikkel/foeringstatussvar/v2" elementFormDefault="qualified">
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-matrikkel/foeringstatussvar/v2" 
+           xmlns:ms="https://ks-no.github.io/standarder/fiks-protokoll/fiks-matrikkel/foeringstatussvar/v2" elementFormDefault="qualified">
 	<xs:element name="StatusMatrikkelSvar" type="ms:StatusMatrikkelSvar"/>
 
 	<xs:complexType name="StatusMatrikkelSvar">
 		<xs:sequence>
-			<xs:element name="klientMeldingId" minOccurs="1" maxOccurs="1" type="ms:guid"/>
-			<xs:element name="statusBehandling" minOccurs="1" maxOccurs="1" type="ms:StatusType"/>
-			<xs:element name="meldingId" minOccurs="0" maxOccurs="1" type="ms:guid"/>
-			<xs:element name="statusKvittering" minOccurs="0" maxOccurs="1" type="ms:KvitteringStatus"/>			
+			<xs:element name="klientMeldingId" type="ms:guid"/>
+			<xs:element name="statusBehandling" type="ms:StatusType"/>
+			<xs:element name="meldingId" minOccurs="0" type="ms:guid"/>
+			<xs:element name="statusKvittering" minOccurs="0" type="ms:KvitteringStatus"/>			
 		</xs:sequence>
 	</xs:complexType>
 

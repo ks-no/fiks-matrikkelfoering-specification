@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://rep.geointegrasjon.no/Matrikkel/feilmelding/feilmeldingbase/v2"
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-matrikkel/feilmelding/feilmeldingbase/v2"
 			xmlns:xs="http://www.w3.org/2001/XMLSchema"
-			targetNamespace="http://rep.geointegrasjon.no/Matrikkel/feilmelding/feilmeldingbase/v2"
+			targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-matrikkel/feilmelding/feilmeldingbase/v2"
 			elementFormDefault="qualified">
 
 	<xs:complexType name="feilmelding">

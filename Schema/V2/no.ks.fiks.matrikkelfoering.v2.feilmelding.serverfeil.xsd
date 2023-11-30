@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://rep.geointegrasjon.no/Matrikkel/feilmelding/serverfeil/v2"
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-matrikkel/feilmelding/serverfeil/v2"
 			xmlns:xs="http://www.w3.org/2001/XMLSchema"
-			xmlns:feilmeldingBase="http://rep.geointegrasjon.no/Matrikkel/feilmelding/feilmeldingbase/v2"
-			targetNamespace="http://rep.geointegrasjon.no/Matrikkel/feilmelding/serverfeil/v2"
+			xmlns:feilmeldingBase="https://ks-no.github.io/standarder/fiks-protokoll/fiks-matrikkel/feilmelding/feilmeldingbase/v2"
+			targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-matrikkel/feilmelding/serverfeil/v2"
 			elementFormDefault="qualified">
 
-	<xs:import namespace="http://rep.geointegrasjon.no/Matrikkel/feilmelding/feilmeldingbase/v2"
-			   schemaLocation="./feilmeldingBase.xsd"/>
+	<xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-matrikkel/feilmelding/feilmeldingbase/v2"
+			   schemaLocation="./no.ks.fiks.matrikkelfoering.v2.feilmelding.feilmeldingbase.xsd"/>
 
 	<xs:element name="serverfeil" type="feilmeldingBase:feilmelding" />
 

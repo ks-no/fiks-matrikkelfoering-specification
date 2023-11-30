@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-matrikkel/felles/punkt/v2" 
+           xmlns:fp="https://ks-no.github.io/standarder/fiks-protokoll/fiks-matrikkel/felles/punkt/v2" elementFormDefault="qualified">
+	<xs:element name="Punkt" type="fp:Punkt"/>
+
+	<xs:complexType name="Punkt">
+		<xs:complexContent>
+			<xs:extension base="fp:Geometri">
+				<xs:sequence>
+					<xs:element name="posisjon" type="fp:Koordinat"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="Geometri">
+		<xs:sequence>
+			<xs:element name="koordinatsystem" type="fp:KoordinatsystemKode"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Koordinat">
+		<xs:sequence>
+			<xs:element name="x" type="xs:double"/>
+			<xs:element name="y" type="xs:double"/>
+			<xs:element name="z" type="xs:double" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="KoordinatsystemKode">
+		<xs:complexContent>
+			<xs:extension base="fp:Kode">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="Kode">
+		<xs:sequence>
+			<xs:element name="kodeverdi" type="xs:string"/>
+			<xs:element name="kodebeskrivelse" type="xs:string" minOccurs="0"/>
+			<xs:element name="erGyldig" type="xs:boolean" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

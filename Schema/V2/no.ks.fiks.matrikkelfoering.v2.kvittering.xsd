@@ -1,22 +1,21 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
-		xmlns="http://rep.geointegrasjon.no/Matrikkel/foeringskvittering/v2"
-		xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-		targetNamespace="http://rep.geointegrasjon.no/Matrikkel/foeringskvittering/v2" 
-		xmlns:mf="http://rep.geointegrasjon.no/Matrikkel/foering/v2" 
-		elementFormDefault="qualified" 
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+		xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-matrikkel/foeringskvittering/v2"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-matrikkel/foeringskvittering/v2"
+		xmlns:mf="https://ks-no.github.io/standarder/fiks-protokoll/fiks-matrikkel/foering/v2"
+		elementFormDefault="qualified">
 
 	<xs:element name="KvitteringMatrikkel" type="KvitteringMatrikkelType"/>
 	<xs:element name="Saksnummer" type="SaksnummerType"/>
 
 	<xs:complexType name="KvitteringMatrikkelType">
 		<xs:sequence>
-			<xs:element name="saksnummer" minOccurs="1" maxOccurs="1" type="SaksnummerType"/>
-			<xs:element name="status" minOccurs="1" maxOccurs="1" type="StatusTypeType"/>
-			<xs:element name="melding" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-			<xs:element name="tiltak" minOccurs="0" maxOccurs="1" nillable="true" type="mf:TiltakListe"/>
-			<xs:element name="byggIdent" minOccurs="0" maxOccurs="1" nillable="true" type="mf:ByggIdentListe"/>
+			<xs:element name="saksnummer" type="SaksnummerType"/>
+			<xs:element name="status" type="StatusTypeType"/>
+			<xs:element name="melding" minOccurs="0" nillable="true" type="xs:string"/>
+			<xs:element name="tiltak" minOccurs="0" nillable="true" type="mf:TiltakListe"/>
+			<xs:element name="byggIdent" minOccurs="0" nillable="true" type="mf:ByggIdentListe"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -28,8 +27,8 @@
 
 	<xs:complexType name="SaksnummerType">
 		<xs:sequence>
-			<xs:element name="saksaar" minOccurs="1" maxOccurs="1" type="xs:integer"/>
-			<xs:element name="sakssekvensnummer" minOccurs="1" maxOccurs="1" type="xs:integer"/>
+			<xs:element name="saksaar" type="xs:integer"/>
+			<xs:element name="sakssekvensnummer" type="xs:integer"/>
 		</xs:sequence>
 	</xs:complexType>
 

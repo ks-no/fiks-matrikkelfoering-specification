@@ -17,7 +17,9 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="saksnummer" type="Saksnummer"/>
-			<xs:element name="kvitteringer" maxOccurs="unbounded" nillable="true" type="Kvittering"/>
+			<xs:element name="status" type="OverordnetStatus"/>
+			<xs:element name="melding" minOccurs="0" nillable="true" type="xs:string"/>
+			<xs:element name="kvitteringer" minOccurs="0" maxOccurs="unbounded" nillable="true" type="Kvittering"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -29,7 +31,7 @@
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="status" type="Statustype"/>
+			<xs:element name="status" type="Status"/>
 			<xs:element name="melding" minOccurs="0" nillable="true" type="xs:string"/>
 			<xs:element name="tiltak" minOccurs="0" nillable="true" type="mf:TiltakType"/>
 			<xs:element name="byggIdent" minOccurs="0" nillable="true" type="mf:ByggIdentType"/>
@@ -43,12 +45,20 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:simpleType name="Statustype">
+	<xs:simpleType name="Status">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="velykket"/>
 			<xs:enumeration value="delvisFoert"/>
 			<xs:enumeration value="skalIkkeMatrikkelfoeres"/>
 			<xs:enumeration value="manglendeOpplysninger"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="OverordnetStatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="velykket"/>
+			<xs:enumeration value="delvisFoert"/>
+			<xs:enumeration value="ikkeFoert"/>
 		</xs:restriction>
 	</xs:simpleType>
 

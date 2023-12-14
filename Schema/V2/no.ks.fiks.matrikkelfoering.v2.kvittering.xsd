@@ -1,39 +1,49 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
 		xmlns="http://rep.geointegrasjon.no/Matrikkel/foeringskvittering/v2"
-		xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-		targetNamespace="http://rep.geointegrasjon.no/Matrikkel/foeringskvittering/v2" 
-		xmlns:mf="http://rep.geointegrasjon.no/Matrikkel/foering/v2" 
-		elementFormDefault="qualified" 
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://rep.geointegrasjon.no/Matrikkel/foeringskvittering/v2"
+		xmlns:mf="http://rep.geointegrasjon.no/Matrikkel/foering/v2"
+		elementFormDefault="qualified">
 
-	<xs:element name="KvitteringMatrikkel" type="KvitteringMatrikkelType"/>
-	<xs:element name="Saksnummer" type="SaksnummerType"/>
+	<xs:element name="KvitteringMatrikkel" type="KvitteringMatrikkel"/>
+	<xs:element name="Saksnummer" type="Saksnummer"/>
 
-	<xs:complexType name="KvitteringMatrikkelType">
+	<xs:complexType name="KvitteringMatrikkel">
+		<xs:annotation>
+			<xs:documentation>
+				Listen kvittering av typen ByggKvittering inneholder status pr enhet. 
+			</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="saksnummer" minOccurs="1" maxOccurs="1" type="SaksnummerType"/>
-			<xs:element name="status" minOccurs="1" maxOccurs="1" type="StatusTypeType"/>
-			<xs:element name="melding" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-			<xs:element name="tiltak" minOccurs="0" maxOccurs="1" nillable="true" type="mf:TiltakListe"/>
-			<xs:element name="byggIdent" minOccurs="0" maxOccurs="1" nillable="true" type="mf:ByggIdentListe"/>
+			<xs:element name="saksnummer" type="Saksnummer"/>
+			<xs:element name="kvitteringer" maxOccurs="unbounded" nillable="true" type="Kvittering"/>
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="SaksnummerListe">
+	<xs:complexType name="Kvittering">
+		<xs:annotation>
+			<xs:documentation>
+				ByggKvittering inneholder status pr enhet. Status viser om det var vellykket registrert eller ikke.
+				Melding kan brukes for å gi informasjon hvorfor det ikke var vellykket. 
+			</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="saksnummer" type="SaksnummerType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="status" type="Statustype"/>
+			<xs:element name="melding" minOccurs="0" nillable="true" type="xs:string"/>
+			<xs:element name="tiltak" minOccurs="0" nillable="true" type="mf:TiltakType"/>
+			<xs:element name="byggIdent" minOccurs="0" nillable="true" type="mf:ByggIdentType"/>
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="SaksnummerType">
+	<xs:complexType name="Saksnummer">
 		<xs:sequence>
-			<xs:element name="saksaar" minOccurs="1" maxOccurs="1" type="xs:integer"/>
-			<xs:element name="sakssekvensnummer" minOccurs="1" maxOccurs="1" type="xs:integer"/>
+			<xs:element name="saksaar" type="xs:integer"/>
+			<xs:element name="sakssekvensnummer" type="xs:integer"/>
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:simpleType name="StatusTypeType">
+	<xs:simpleType name="Statustype">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="velykket"/>
 			<xs:enumeration value="delvisFoert"/>

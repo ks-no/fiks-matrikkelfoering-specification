@@ -287,6 +287,9 @@
   </xs:complexType>
   <xs:element name="Tiltaktype" type="mf:TiltaktypeType"/>
   <xs:complexType name="TiltaktypeType">
+    <xs:annotation>
+      <xs:documentation>Tiltaktype koder: https://register.geonorge.no/kodelister/byggesoknad/tiltaktype?page=1&sorting=codevalue</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>

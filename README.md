@@ -16,6 +16,12 @@ Når man gjør endringer i PlantUML koden kan man kjøre `generate-png-from-puml
 
 ![meldingstyper](https://raw.githubusercontent.com/ks-no/fiks-matrikkelfoering-specification/main/Schema/V2/meldingstyper/meldingstyper.svg)
 
+### Kodelister
+
+##### Tiltaktype 
+Kilde: https://register.geonorge.no/kodelister/byggesoknad/tiltaktype?page=1&sorting=codevalue
+
+Kodelisten ligger også i json-format i dette prosjektet i mappen kodelister her: 
 
 
 

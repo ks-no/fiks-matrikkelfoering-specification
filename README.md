@@ -18,10 +18,13 @@ Når man gjør endringer i PlantUML koden kan man kjøre `generate-png-from-puml
 
 ### Kodelister
 
+Kodelistene ligger i json-format, samt i svg-format i dette prosjektet i mappen [Schema/V2/kodelister](https://github.com/ks-no/fiks-matrikkelfoering-specification/tree/main/Schema/V2/kodelister).
+
 ##### Tiltaktype 
 Kilde: https://register.geonorge.no/kodelister/byggesoknad/tiltaktype?page=1&sorting=codevalue
 
-Kodelisten ligger også i json-format i dette prosjektet i mappen kodelister her: 
+
+Json fil: [no.ks.fiks.matrikkelfoering.v2.kodelister.tiltaktype.json](https://github.com/ks-no/fiks-matrikkelfoering-specification/blob/main/Schema/V2/kodelister/no.ks.fiks.matrikkelfoering.v2.kodelister.tiltaktype/no.ks.fiks.matrikkelfoering.v2.kodelister.tiltaktype.json)
 
 
 

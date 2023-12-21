@@ -22,6 +22,9 @@
   </xs:complexType>
   <xs:element name="Avloepstilknytning" type="mf:AvloepstilknytningType"/>
   <xs:complexType name="AvloepstilknytningType">
+    <xs:annotation>
+      <xs:documentation>Kodeliste hos Geonorge: https://register.geonorge.no/kodelister/byggesoknad/avlopstilknytning</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -62,6 +65,9 @@
   </xs:complexType>
   <xs:element name="BruksenhetstypeKode" type="mf:BruksenhetstypeKodeType"/>
   <xs:complexType name="BruksenhetstypeKodeType">
+    <xs:annotation>
+      <xs:documentation>Kodeliste hos Geonorge: https://register.geonorge.no/kodelister/byggesoknad/bruksenhetstype</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -140,6 +146,9 @@
   </xs:complexType>
   <xs:element name="Dispensasjonstype" type="mf:DispensasjonstypeType"/>
   <xs:complexType name="DispensasjonstypeType">
+    <xs:annotation>
+      <xs:documentation>Kodeliste hos Geonorge: https://register.geonorge.no/kodelister/byggesoknad/dispensasjonstype</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -160,6 +169,9 @@
   </xs:complexType>
   <xs:element name="EnergiforsyningType" type="mf:EnergiforsyningTypeType"/>
   <xs:complexType name="EnergiforsyningTypeType">
+    <xs:annotation>
+      <xs:documentation>Kodeliste hos Geonorge: https://register.geonorge.no/kodelister/byggesoknad/energiforsyningtype</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -203,6 +215,9 @@
   </xs:complexType>
   <xs:element name="Etasjeplan" type="mf:EtasjeplanType"/>
   <xs:complexType name="EtasjeplanType">
+    <xs:annotation>
+      <xs:documentation>Kodeliste hos Geonorge: https://register.geonorge.no/kodelister/byggesoknad/etasjeplan</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -210,6 +225,9 @@
   </xs:complexType>
   <xs:element name="KjoekkentilgangKode" type="mf:KjoekkentilgangKodeType"/>
   <xs:complexType name="KjoekkentilgangKodeType">
+    <xs:annotation>
+      <xs:documentation>Kodeliste hos Geonorge: https://register.geonorge.no/kodelister/byggesoknad/kjokkentilgang</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -249,6 +267,9 @@
   </xs:complexType>
   <xs:element name="Partstype" type="mf:PartstypeType"/>
   <xs:complexType name="PartstypeType">
+    <xs:annotation>
+      <xs:documentation>Kodeliste hos Geonorge: https://register.geonorge.no/kodelister/byggesoknad/partstype</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -256,6 +277,9 @@
   </xs:complexType>
   <xs:element name="Prosesskategori" type="mf:ProsesskategoriType"/>
   <xs:complexType name="ProsesskategoriType">
+    <xs:annotation>
+      <xs:documentation>Kodeliste: ? Fant ikke denne hos Geonorge.</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -288,7 +312,7 @@
   <xs:element name="Tiltaktype" type="mf:TiltaktypeType"/>
   <xs:complexType name="TiltaktypeType">
     <xs:annotation>
-      <xs:documentation>Tiltaktype koder: https://register.geonorge.no/kodelister/byggesoknad/tiltaktype?page=1&sorting=codevalue</xs:documentation>
+      <xs:documentation>Kodeliste hos Geonorge: https://register.geonorge.no/kodelister/byggesoknad/tiltaktype</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
@@ -297,6 +321,9 @@
   </xs:complexType>
   <xs:element name="Vanntilknytning" type="mf:VanntilknytningType"/>
   <xs:complexType name="VanntilknytningType">
+    <xs:annotation>
+      <xs:documentation>Kodeliste hos Geonorge: ? Fant ikke denne hos Geonorge.</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -304,6 +331,9 @@
   </xs:complexType>
   <xs:element name="Varmefordeling" type="mf:VarmefordelingType"/>
   <xs:complexType name="VarmefordelingType">
+    <xs:annotation>
+      <xs:documentation>Kodeliste hos Geonorge: https://register.geonorge.no/kodelister/byggesoknad/varmefordeling</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -326,6 +356,9 @@
   </xs:complexType>
   <xs:element name="Vedtakstype" type="mf:VedtakstypeType"/>
   <xs:complexType name="VedtakstypeType">
+    <xs:annotation>
+      <xs:documentation>Kodeliste hos Geonorge: ? Fant ikke denne hos Geonorge.</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -333,6 +366,9 @@
   </xs:complexType>
   <xs:element name="Bygningstype" type="mf:BygningstypeType"/>
   <xs:complexType name="BygningstypeType">
+    <xs:annotation>
+      <xs:documentation>Kodeliste hos Geonorge: https://register.geonorge.no/kodelister/byggesoknad/bygningstype</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -355,6 +391,9 @@
   </xs:complexType>
   <xs:element name="Naeringsgruppe" type="mf:NaeringsgruppeType"/>
   <xs:complexType name="NaeringsgruppeType">
+    <xs:annotation>
+      <xs:documentation>Kodeliste hos Geonorge: https://register.geonorge.no/kodelister/byggesoknad/naeringsgruppe</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0" maxOccurs="1"/>

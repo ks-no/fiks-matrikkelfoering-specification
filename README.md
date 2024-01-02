@@ -86,9 +86,7 @@ Kilde: https://register.geonorge.no/kodelister/byggesoknad/kjokkentilgang
 Kilde: https://register.geonorge.no/kodelister/byggesoknad/partstype
 
 ##### Prosesskategori
-Kilde: ?
-
-Denne fant vi ikke hos Geonorge
+Kilde: https://register.geonorge.no/kodelister/byggesoknad/s%C3%B8knadstype
 
 ##### Tiltaktype 
 Kilde: https://register.geonorge.no/kodelister/byggesoknad/tiltaktype
@@ -97,9 +95,7 @@ Kilde: https://register.geonorge.no/kodelister/byggesoknad/tiltaktype
 Kilde: https://register.geonorge.no/kodelister/byggesoknad/varmefordeling
 
 ##### Vedtaktype
-Kilde: ?
-
-Denne fant vi ikke hos Geonorge
+Kilde: https://register.geonorge.no/kodelister/ebyggesak/vedtakstatus
 
 ##### Bygningstype
 Kilde: https://register.geonorge.no/kodelister/byggesoknad/bygningstype

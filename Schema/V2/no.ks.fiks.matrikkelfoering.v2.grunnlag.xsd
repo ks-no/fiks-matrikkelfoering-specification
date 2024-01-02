@@ -278,7 +278,7 @@
   <xs:element name="Prosesskategori" type="mf:ProsesskategoriType"/>
   <xs:complexType name="ProsesskategoriType">
     <xs:annotation>
-      <xs:documentation>Kodeliste: ? Fant ikke denne hos Geonorge.</xs:documentation>
+      <xs:documentation>Kodeliste: https://register.geonorge.no/kodelister/byggesoknad/s%C3%B8knadstype</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>
@@ -357,7 +357,7 @@
   <xs:element name="Vedtakstype" type="mf:VedtakstypeType"/>
   <xs:complexType name="VedtakstypeType">
     <xs:annotation>
-      <xs:documentation>Kodeliste hos Geonorge: ? Fant ikke denne hos Geonorge.</xs:documentation>
+      <xs:documentation>Kodeliste hos Geonorge: https://register.geonorge.no/kodelister/ebyggesak/vedtakstatus</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string" minOccurs="1" maxOccurs="1"/>

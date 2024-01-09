@@ -4,7 +4,12 @@ Json schemas og dokumentasjon for protokollen Fiks Matrikkelføring.
 
 Videre arbeid med denne protokollen/standarden gjøres her.
 
-Schemas vil bli inkludert i pakker med genererte models basert på schemas i andre prosjekt for f.eks. .net og java.
+XSD skjemaene er inkludert i en nuget pakke som også inneholder genererte C# models basert på skjema for .NET.
+Nuget pakken [KS.Fiks.Matrikkelfoering.Models.V2](https://www.nuget.org/packages/KS.Fiks.Matrikkelfoering.Models.V2) er tilgjengelig på nuget.org.
+
+Det er ikke tilgjengelig for java som maven-pakke for øyeblikket. Hvis det er behov for dette vil vi lage det. 
+
+
 
 ## Dokumentasjon
 

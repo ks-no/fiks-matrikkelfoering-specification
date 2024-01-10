@@ -33,7 +33,7 @@
 		<xs:sequence>
 			<xs:element name="status" type="Status"/>
 			<xs:element name="melding" minOccurs="0" nillable="true" type="xs:string"/>
-			<xs:element name="tiltak" minOccurs="0" nillable="true" type="mf:TiltakType"/>
+			<xs:element name="tiltakid" nillable="true" type="xs:string"/>
 			<xs:element name="byggIdent" minOccurs="0" nillable="true" type="mf:ByggIdentType"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -48,17 +48,15 @@
 	<xs:simpleType name="Status">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="velykket"/>
-			<xs:enumeration value="delvisFoert"/>
+			<xs:enumeration value="feilet"/>
 			<xs:enumeration value="skalIkkeMatrikkelfoeres"/>
-			<xs:enumeration value="manglendeOpplysninger"/>
 		</xs:restriction>
 	</xs:simpleType>
 
 	<xs:simpleType name="OverordnetStatus">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="velykket"/>
-			<xs:enumeration value="delvisFoert"/>
-			<xs:enumeration value="ikkeFoert"/>
+			<xs:enumeration value="ok"/>
+			<xs:enumeration value="ikkeOk"/>
 		</xs:restriction>
 	</xs:simpleType>
 

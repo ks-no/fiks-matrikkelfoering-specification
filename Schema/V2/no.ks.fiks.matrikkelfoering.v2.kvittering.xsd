@@ -56,7 +56,7 @@
 	<xs:simpleType name="OverordnetStatus">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="ok"/>
-			<xs:enumeration value="ikkeOk"/>
+			<xs:enumeration value="feilet"/>
 		</xs:restriction>
 	</xs:simpleType>
 

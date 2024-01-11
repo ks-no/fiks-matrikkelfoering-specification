@@ -128,7 +128,7 @@
       <xs:element name="harHeis" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean"/>
       <xs:element name="endring" minOccurs="1" maxOccurs="1" type="mf:EndringsstatusType"/>
       <xs:element name="representasjonsPunkt" minOccurs="0" maxOccurs="1" nillable="true" type="fellesgeometrins:Punkt"/>
-      <xs:element name="tiltakid" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+      <xs:element name="tiltakid" minOccurs="1" maxOccurs="1" nillable="true" type="xs:string"/>
       <xs:element name="byggIdent" minOccurs="0" maxOccurs="1" nillable="true" type="mf:ByggIdentType"/>
     </xs:sequence>
   </xs:complexType>

@@ -33,7 +33,7 @@
 		<xs:sequence>
 			<xs:element name="status" type="Status"/>
 			<xs:element name="melding" minOccurs="0" nillable="true" type="xs:string"/>
-			<xs:element name="tiltakid" nillable="true" type="xs:string"/>
+			<xs:element name="tiltakid" type="xs:string"/>
 			<xs:element name="byggIdent" minOccurs="0" nillable="true" type="mf:ByggIdentType"/>
 		</xs:sequence>
 	</xs:complexType>

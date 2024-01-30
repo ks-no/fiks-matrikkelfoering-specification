@@ -1,0 +1,61 @@
+@startuml
+
+class Bbox {
+    +nedreVenstre : Koordinat
+    +oevreHoeyre : Koordinat
+}
+Bbox *- Geometri
+class BboxListe {
+    +liste : Bbox[]
+}
+class Flate {
+    +indreAvgrensning : RingListe
+    +ytreAvgrensning : Ring
+}
+Flate *- Geometri
+class FlateListe {
+    +liste : Flate[]
+}
+class Geometri {
+    +koordinatsystem : KoordinatsystemKode
+}
+class Koordinat {
+    +x : double
+    +y : double
+    +z : double
+}
+class KoordinatListe {
+    +liste : Koordinat[]
+}
+class KoordinatsystemKode {
+}
+KoordinatsystemKode *- Kode
+class KoordinatsystemKodeListe {
+    +liste : KoordinatsystemKode[]
+}
+class Kurve {
+    +linje : KoordinatListe
+}
+Kurve *- Geometri
+class Omraade {
+    +punkt : Punkt
+    +flate : Flate
+}
+class OmraadeListe {
+    +liste : Omraade[]
+}
+class Punkt {
+    +posisjon : Koordinat
+}
+Punkt *- Geometri
+class PunktListe {
+    +liste : Punkt[]
+}
+class Ring {
+    +lukketKurve : KoordinatListe
+}
+class RingListe {
+    +liste : Ring[]
+}
+
+@enduml

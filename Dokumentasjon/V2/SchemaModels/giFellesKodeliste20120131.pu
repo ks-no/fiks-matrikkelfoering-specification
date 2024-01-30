@@ -1,0 +1,12 @@
+@startuml
+
+class Kode {
+    +kodeverdi : string
+    +kodebeskrivelse : string
+    +erGyldig : boolean
+}
+class KodeListe {
+    +liste : Kode[]
+}
+
+@enduml

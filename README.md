@@ -9,13 +9,23 @@ Nuget pakken [KS.Fiks.Matrikkelfoering.Models.V2](https://www.nuget.org/packages
 
 Det er ikke tilgjengelig for java som maven-pakke for øyeblikket. Hvis det er behov for dette vil vi lage det. 
 
-
-
 ## Dokumentasjon
 
 For hver versjon av protokollen vil det følge en egen dokumentasjon som baserer seg på Markdown og PlantUML.
+Vi bruker også et [python verktøy](https://github.com/tefra/xsdata-plantuml) for å generere PlantUML klassediagrammer fra xsd-filene.
 
-Når man gjør endringer i PlantUML koden kan man kjøre `generate-png-from-puml.sh` scriptet for å generere png filer ut av PlantUML koden. Dette forutsetter at man har installert PlantUML og graphviz.
+Når man gjør endringer i xsd og/eller PlantUML koden kan man kjøre `generate-uml.sh` scriptet for å generere ny PlantUML filer fra xsd samt png filer ut av PlantUML koden. 
+Dette forutsetter at man har installert PlantUML og graphviz for PlantUML, python og python biblioteket nevnt ovenfor. 
+
+### Klassediagram
+
+Gå til lenkene under for genererte klassediagram for xsd-skjemaene
+#### [Grunnlag (no.ks.fiks.matrikkelfoering.v2.grunnlag.xsd)](./Dokumentasjon/V2/SchemaModels/no/ks/fiks/matrikkelfoering/v2/grunnlag.md)
+#### [Kvittering (no.ks.fiks.matrikkelfoering.v2.kvittering.xsd)](./Dokumentasjon/V2/SchemaModels/no/ks/fiks/matrikkelfoering/v2/kvittering.md)
+#### [Status (no.ks.fiks.matrikkelfoering.v2.status.xsd)](./Dokumentasjon/V2/SchemaModels/no/ks/fiks/matrikkelfoering/v2/status.md)
+#### [Statussvar (no.ks.fiks.matrikkelfoering.v2.statussvar.xsd)](./Dokumentasjon/V2/SchemaModels/no/ks/fiks/matrikkelfoering/v2/statussvar.md)
+#### [giFellesGeometri20120131 (giFellesGeometri20120131.xsd)](./Dokumentasjon/V2/SchemaModels/giFellesGeometri20120131.md)
+#### [giFellesKodeliste20120131 (giFellesKodeliste20120131.xsd](./Dokumentasjon/V2/SchemaModels/giFellesKodeliste20120131.md)
 
 ### Meldingstyper
 
@@ -28,7 +38,6 @@ Der kan man laste de ned som json-fil hvor da man finner `codevalue` som er **ko
 
 Siden de er tilgjengelig der og det er kilden for kodelistene for _Fiks matrikkelføring_ leveres det ikke kodelister med i spesifikasjonen.
 Men vi henviser til kilden i xsd skjema for felter som bruker koder. 
-
 
 Eksempel på json-format hos Geonorge:
 

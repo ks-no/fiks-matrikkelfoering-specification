@@ -1,0 +1,11 @@
+@startuml
+
+class StatusMatrikkel {
+}
+StatusMatrikkel *- StatusMatrikkelType
+class StatusMatrikkelType {
+    +klientMeldingId : string
+    +svarMedKvittering : boolean
+}
+
+@enduml

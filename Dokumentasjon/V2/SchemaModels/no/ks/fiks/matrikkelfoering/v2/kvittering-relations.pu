@@ -1,0 +1,34 @@
+@startuml
+
+class Kvittering {
+    +status : Status
+    +melding : string
+    +tiltakid : string
+    +byggIdent : string
+}
+class KvitteringMatrikkel {
+    +saksnummer : Saksnummer
+    +status : OverordnetStatus
+    +melding : string
+    +kvitteringer : Kvittering[]
+}
+KvitteringMatrikkel -- Saksnummer
+KvitteringMatrikkel -- OverordnetStatus
+KvitteringMatrikkel -- Kvittering
+Kvittering -- Status
+
+enum OverordnetStatus {
+    ok = ok
+    feilet = feilet
+}
+class Saksnummer {
+    +saksaar : integer
+    +sakssekvensnummer : integer
+}
+enum Status {
+    velykket = velykket
+    feilet = feilet
+    skalIkkeMatrikkelfoeres = skalIkkeMatrikkelfoeres
+}
+
+@enduml

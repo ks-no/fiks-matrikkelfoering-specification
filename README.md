@@ -17,6 +17,14 @@ Vi bruker også et [python verktøy](https://github.com/tefra/xsdata-plantuml) f
 Når man gjør endringer i xsd og/eller PlantUML koden kan man kjøre `generate-uml.sh` scriptet for å generere ny PlantUML filer fra xsd samt png filer ut av PlantUML koden. 
 Dette forutsetter at man har installert PlantUML og graphviz for PlantUML, python og python biblioteket nevnt ovenfor. 
 
+Xsd-filene er blitt generert ved hjelp av et verktøy fra UML, som gjør at oppbygging og navngivning i xsd-filene ikke er optimal.
+F.eks. har alle lister blitt til egne objekter, og navngivning har blitt gjort med at alle objekter som er en liste har fått en suffix med "Liste" og alle ComplexType's har fått en suffix med "Type".
+Dette gjør dermed at vi får litt forvirrende navngivninger som f.eks. Tiltak, Tiltaktype, TiltaktypeType og TiltakType. Da er TiltakttypeType ComplexType for Tiltaktype, og TiltakType er ComplexType for Tiltak.
+Dette gjelder spesielt `no.ks.fiks.matrikkelfoering.v2.grunnlag.xsd`. På grunn av dette får vi også et problem med genereringen av PlantUML. 
+Der hvor man har to like navn, pga den ikke kan se forskjell på små og store bokstaver, som f.eks. Tilaktype og TiltakType, så vil generatoren legge på en "_1" og en av dem heter da Tiltaktype_1. 
+Dette må manuelt fikses ved å legge på `as "TiltakType"` i PlantUML filen. I tillegg har vi hjulpet generatoren med relasjonene og kopiert dette til en egen fil, `grunnlag-relations.pu`. 
+Denne blir ikke skrevet over hvis man genererer PlantUML på nytt og må fikses manuelt. 
+
 ### Klassediagram
 
 Gå til lenkene under for genererte klassediagram for xsd-skjemaene

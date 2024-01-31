@@ -1,0 +1,437 @@
+@startuml
+left to right direction
+class Adresse {
+}
+Adresse *- AdresseType
+class AdresseListe {
+    +adresse : AdresseType[]
+}
+
+AdresseListe -- AdresseType
+
+class AdresseType {
+    +adressekode : string
+    +adressenavn : string
+    +adressenummer : string
+    +adressebokstav : string
+    +undernummer : string
+}
+class Avloepstilknytning {
+}
+Avloepstilknytning *- AvloepstilknytningType
+class AvloepstilknytningType {
+    +kode : string
+    +beskrivelse : string
+}
+class Bruksenhet {
+}
+Bruksenhet *- BruksenhetType
+
+class BruksenhetListe {
+    +bruksenhet : BruksenhetType[]
+}
+
+BruksenhetListe -- BruksenhetType
+
+class BruksenhetType {
+    +bruksenhetsnummer : BruksenhetsnummerType
+    +bruksenhetstype : BruksenhetstypeKodeType
+    +bruksareal : double
+    +kjoekkentilgang : KjoekkentilgangKodeType
+    +antallRom : integer
+    +antallBad : integer
+    +antallWC : integer
+    +adresse : AdresseType
+    +matrikkelnummer : MatrikkelnummerType
+    +endring : EndringsstatusType
+}
+
+BruksenhetType -- BruksenhetsnummerType
+BruksenhetType -- BruksenhetstypeKodeType
+BruksenhetType -- KjoekkentilgangKodeType
+BruksenhetType -- MatrikkelnummerType
+BruksenhetType -- EndringsstatusType
+
+class Bruksenhetsnummer {
+}
+
+Bruksenhetsnummer *- BruksenhetsnummerType
+
+class BruksenhetsnummerListe {
+    +bruksenhetsnummer : BruksenhetsnummerType[]
+}
+
+BruksenhetsnummerListe -- BruksenhetsnummerType
+
+class BruksenhetsnummerType {
+    +etasjeplan : EtasjeplanType
+    +etasjenummer : integer
+    +loepenummer : integer
+}
+class BruksenhetstypeKode {
+}
+
+BruksenhetstypeKode *- BruksenhetstypeKodeType
+class BruksenhetstypeKodeType {
+    +kode : string
+    +beskrivelse : string
+}
+class ByggIdent {
+}
+ByggIdent *- ByggIdentType
+class ByggIdentListe {
+    +byggident : ByggIdentType[]
+}
+
+ByggIdentListe -- ByggIdentType
+
+class ByggIdentType {
+    +bygningsnummer : long
+    +bygningsloepenummer : integer
+}
+class Byggesak {
+}
+Byggesak *- ByggesakType
+
+class ByggesakListe {
+    +byggesak : ByggesakType[]
+}
+class ByggesakType {
+    +systemId : string
+    +tittel : string
+    +saksnummer : SaksnummerType
+    +kategori : ProsesskategoriType
+    +vedtak : VedtakType
+    +ansvarligSoeker : PartType
+    +tiltakshaver : PartType
+    +matrikkelopplysninger : MatrikkelopplysningerType
+    +adresse : string
+    +referanseAndreSaker : SaksnummerListe
+    +referanseKlagesaker : SaksnummerListe
+    +registrertDato : dateTime
+    +saksbehandler : string
+    +posisjon : Punkt
+}
+
+ByggesakListe -- ByggesakType
+ByggesakType -- SaksnummerType
+ByggesakType -- ProsesskategoriType
+ByggesakType -- VedtakType
+ByggesakType -- PartType
+ByggesakType -- MatrikkelopplysningerType
+ByggesakType -- SaksnummerListe
+ByggesakType -- Punkt
+
+
+class Bygning {
+}
+Bygning *- BygningType
+class BygningListe {
+    +bygning : BygningType[]
+}
+class BygningType {
+    +naeringsgruppe : NaeringsgruppeType
+    +bebygdAreal : double
+    +bygningstype : BygningstypeType
+    +bruksenheter : BruksenhetListe
+    +etasjer : EtasjeListe
+    +avlop : AvloepstilknytningType
+    +energiforsyning : EnergiforsyningType
+    +vannforsyning : VanntilknytningType
+    +harHeis : boolean
+    +endring : EndringsstatusType
+    +representasjonsPunkt : Punkt
+    +tiltakid : string
+    +byggIdent : ByggIdentType
+}
+BygningListe -- BygningType
+BygningType -- NaeringsgruppeType
+BygningType -- BygningstypeType
+BygningType -- BruksenhetListe
+BygningType -- EtasjeListe
+BygningType -- AvloepstilknytningType
+BygningType -- EnergiforsyningType
+BygningType -- VanntilknytningType
+BygningType -- EndringsstatusType
+BygningType -- Punkt
+BygningType -- ByggIdentType
+
+
+class Bygningstype {
+}
+Bygningstype *- BygningstypeType
+class BygningstypeType {
+    +kode : string
+    +beskrivelse : string
+}
+class Dispensasjon {
+}
+Dispensasjon *- DispensasjonType
+class DispensasjonListe {
+    +dispensasjon : DispensasjonType[]
+}
+DispensasjonListe -- DispensasjonType
+class DispensasjonType {
+    +dispensasjonstype : DispensasjonstypeType
+    +begrunnelse : string
+}
+
+DispensasjonType -- DispensasjonstypeType
+
+class Dispensasjonstype {
+}
+Dispensasjonstype *- DispensasjonstypeType
+class DispensasjonstypeType {
+    +kode : string
+    +beskrivelse : string
+}
+class EndringsstatusListe {
+    +endringsstatus : EndringsstatusType[]
+}
+enum EndringsstatusType {
+    Eksisterende = Eksisterende
+    Ny = Ny
+    Endret = Endret
+    Fjernet = Fjernet
+}
+EndringsstatusListe -- EndringsstatusType
+class Energiforsyning {
+}
+Energiforsyning *- EnergiforsyningType_1
+class EnergiforsyningListe {
+    +energiforsyning : EnergiforsyningType[]
+}
+class EnergiforsyningType {
+}
+EnergiforsyningListe -- EnergiforsyningType
+EnergiforsyningType *- EnergiforsyningTypeType
+class EnergiforsyningTypeListe {
+    +energiforsyningType : EnergiforsyningTypeType[]
+}
+class EnergiforsyningTypeType {
+    +kode : string
+    +beskrivelse : string
+}
+EnergiforsyningTypeListe -- EnergiforsyningTypeType
+
+class EnergiforsyningType_1 as "EnergiforsyningType" {
+    +varmefordeling : VarmefordelingListe
+    +energiforsyning : EnergiforsyningTypeListe
+    +relevant : boolean
+}
+
+EnergiforsyningType_1 -- VarmefordelingListe
+EnergiforsyningType_1 -- EnergiforsyningTypeListe
+
+class EnkelAdresse {
+}
+EnkelAdresse *- EnkelAdresseType
+class EnkelAdresseListe {
+    +enkeladresse : EnkelAdresseType[]
+}
+class EnkelAdresseType {
+    +adresselinje1 : string
+    +adresselinje2 : string
+    +adresselinje3 : string
+    +postnr : string
+    +poststed : string
+    +landkode : string
+}
+EnkelAdresseListe -- EnkelAdresseType
+class Etasje {
+}
+Etasje *- EtasjeType
+class EtasjeListe {
+    +etasje : EtasjeType[]
+}
+class EtasjeType {
+    +etasjenummer : integer
+    +etasjeplan : EtasjeplanType
+    +antallBoenheter : integer
+    +bruksarealTilAnnet : double
+    +bruksarealTilBolig : double
+    +bruksarealTotalt : double
+    +bruttoarealTilBolig : double
+    +bruttoarealTotalt : double
+    +bruttoarealTilAnnet : double
+    +endring : EndringsstatusType
+}
+EtasjeListe -- EtasjeType
+
+EtasjeType -- EtasjeplanType
+EtasjeType -- EndringsstatusType
+
+
+class Etasjeplan {
+}
+Etasjeplan *- EtasjeplanType
+class EtasjeplanType {
+    +kode : string
+    +beskrivelse : string
+}
+class KjoekkentilgangKode {
+}
+KjoekkentilgangKode *- KjoekkentilgangKodeType
+class KjoekkentilgangKodeType {
+    +kode : string
+    +beskrivelse : string
+}
+class Matrikkelnummer {
+}
+Matrikkelnummer *- MatrikkelnummerType
+class MatrikkelnummerListe {
+    +matrikkelnummer : MatrikkelnummerType[]
+}
+class MatrikkelnummerType {
+    +kommunenummer : string
+    +gaardsnummer : integer
+    +bruksnummer : integer
+    +festenummer : integer
+    +seksjonsnummer : integer
+}
+MatrikkelnummerListe -- MatrikkelnummerType
+class Matrikkelopplysninger {
+}
+Matrikkelopplysninger *- MatrikkelopplysningerType
+class MatrikkelopplysningerListe {
+    +matrikkelopplysninger : MatrikkelopplysningerType[]
+}
+class MatrikkelopplysningerType {
+    +eiendomsidentifikasjon : MatrikkelnummerListe
+    +adresse : AdresseListe
+    +bygning : BygningListe
+    +oppdatertDato : dateTime
+}
+
+MatrikkelopplysningerType -- MatrikkelopplysningerListe
+MatrikkelopplysningerType -- AdresseListe
+MatrikkelopplysningerType -- BygningListe
+
+class Naeringsgruppe {
+}
+Naeringsgruppe *- NaeringsgruppeType
+class NaeringsgruppeType {
+    +kode : string
+    +beskrivelse : string
+}
+class Part {
+}
+Part *- PartType
+class PartListe {
+    +part : PartType[]
+}
+class PartType {
+    +partstype : PartstypeType
+    +foedselsnummer : string
+    +organisasjonsnummer : string
+    +navn : string
+    +adresse : EnkelAdresseType
+    +telefonnummer : string
+    +mobilnummer : string
+    +epost : string
+}
+
+PartListe -- PartType
+PartType -- PartstypeType
+PartType -- EnkelAdresseType
+
+class Partstype {
+}
+Partstype *- PartstypeType
+
+class PartstypeType {
+    +kode : string
+    +beskrivelse : string
+}
+class Prosesskategori {
+}
+Prosesskategori *- ProsesskategoriType
+class ProsesskategoriType {
+    +kode : string
+    +beskrivelse : string
+}
+class Saksnummer {
+}
+Saksnummer *- SaksnummerType
+class SaksnummerListe {
+    +saksnummer : SaksnummerType[]
+}
+class SaksnummerType {
+    +saksaar : integer
+    +sakssekvensnummer : integer
+}
+
+SaksnummerListe -- SaksnummerType
+
+class Tiltak {
+}
+Tiltak *- TiltakType_1
+class TiltakListe {
+    +tiltak : TiltakType_1[]
+}
+TiltakListe -- TiltakType_1
+class TiltakType_1 as "TiltakType" {
+    +tiltakid : string
+    +tiltakstype : TiltaktypeType
+}
+
+TiltakType_1 - TiltaktypeType
+
+class Tiltaktype {
+}
+Tiltaktype *- TiltaktypeType
+
+class TiltaktypeType {
+    +kode : string
+    +beskrivelse : string
+}
+class Vanntilknytning {
+}
+Vanntilknytning *- VanntilknytningType
+class VanntilknytningType {
+    +kode : string
+    +beskrivelse : string
+}
+class Varmefordeling {
+}
+Varmefordeling *- VarmefordelingType
+class VarmefordelingListe {
+    +varmefordeling : VarmefordelingType[]
+}
+class VarmefordelingType {
+    +kode : string
+    +beskrivelse : string
+}
+
+VarmefordelingListe -- VarmefordelingType
+
+class Vedtak {
+}
+Vedtak *- VedtakType
+class VedtakListe {
+    +vedtak : VedtakType[]
+}
+class VedtakType {
+    +beskrivelse : string
+    +vedtaksdato : dateTime
+    +status : VedtakstypeType
+    +tiltak : TiltakListe
+    +dispensasjoner : DispensasjonListe
+}
+class Vedtakstype {
+}
+
+VedtakType -- VedtakstypeType
+VedtakType -- TiltakListe
+VedtakType -- VedtakListe
+VedtakType -- DispensasjonListe
+
+Vedtakstype *- VedtakstypeType
+
+
+class VedtakstypeType {
+    +kode : string
+    +beskrivelse : string
+}
+
+@enduml

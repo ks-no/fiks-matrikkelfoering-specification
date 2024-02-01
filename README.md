@@ -25,9 +25,11 @@ Der hvor man har to like navn, pga den ikke kan se forskjell på små og store b
 Dette må manuelt fikses ved å legge på `as "TiltakType"` i PlantUML filen. I tillegg har vi hjulpet generatoren med relasjonene og kopiert dette til en egen fil, `grunnlag-relations.pu`. 
 Denne blir ikke skrevet over hvis man genererer PlantUML på nytt og må fikses manuelt. 
 
-### Klassediagram
+### Meldingstyper og skjema
 
-Gå til lenkene under for genererte klassediagram for xsd-skjemaene
+Gå til lenkene under for forklaring om bruk av skjema/meldingstyper. 
+Dokumentasjonen inneholder også genererte klassediagram for xsd-skjemaene
+
 #### [Grunnlag (no.ks.fiks.matrikkelfoering.v2.grunnlag.xsd)](./Dokumentasjon/V2/SchemaModels/no/ks/fiks/matrikkelfoering/v2/grunnlag.md)
 #### [Kvittering (no.ks.fiks.matrikkelfoering.v2.kvittering.xsd)](./Dokumentasjon/V2/SchemaModels/no/ks/fiks/matrikkelfoering/v2/kvittering.md)
 #### [Status (no.ks.fiks.matrikkelfoering.v2.status.xsd)](./Dokumentasjon/V2/SchemaModels/no/ks/fiks/matrikkelfoering/v2/status.md)

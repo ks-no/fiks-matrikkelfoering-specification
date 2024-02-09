@@ -1,0 +1,23 @@
+@startuml
+
+enum KvitteringStatus {
+    IkkeForespurt = IkkeForespurt
+    Vedlagt = Vedlagt
+    Utloept = Utloept
+}
+class StatusMatrikkelSvar {
+    +klientMeldingId : string
+    +statusBehandling : StatusType
+    +meldingId : string
+    +statusKvittering : KvitteringStatus
+}
+StatusMatrikkelSvar -- KvitteringStatus
+StatusMatrikkelSvar -- StatusType
+enum StatusType {
+    IkkeMottatt = IkkeMottatt
+    Mottatt = Mottatt
+    Feil = Feil
+    Kvittert = Kvittert
+}
+
+@enduml

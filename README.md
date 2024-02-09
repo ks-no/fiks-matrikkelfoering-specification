@@ -39,6 +39,9 @@ Dokumentasjonen inneholder også genererte klassediagram for xsd-skjemaene
 
 ### Meldingstyper
 
+Se filen [meldingstyper.json](Schema/V2/meldingstyper/meldingstyper.json) for hvilke meldingstyper som er i denne protokollen og hvordan de henger sammen. 
+Under vises den genererte UML-modellen som viser hvordan meldingstypene henger sammen. 
+Hver meldingstype som har en payload har et tilhørende xsd-skjema med samme navn.
 ![meldingstyper](https://raw.githubusercontent.com/ks-no/fiks-matrikkelfoering-specification/main/Schema/V2/meldingstyper/meldingstyper.svg)
 
 ### Kodelister

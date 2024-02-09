@@ -1,4 +1,4 @@
-# Kontrakter for Fiks Matrikkelfoering
+# Kontrakter og meldingstyper for Fiks Matrikkelfoering
 
 Json schemas og dokumentasjon for protokollen Fiks Matrikkelføring.
 

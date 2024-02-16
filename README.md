@@ -37,15 +37,19 @@ Dokumentasjonen inneholder også genererte klassediagram for xsd-skjemaene
 #### [giFellesGeometri20120131 (giFellesGeometri20120131.xsd)](./Dokumentasjon/V2/SchemaModels/giFellesGeometri20120131.md)
 #### [giFellesKodeliste20120131 (giFellesKodeliste20120131.xsd](./Dokumentasjon/V2/SchemaModels/giFellesKodeliste20120131.md)
 
-### Meldingstyper
 
-Se filen [meldingstyper.json](Schema/V2/meldingstyper/meldingstyper.json) for hvilke meldingstyper som er i denne protokollen og hvordan de henger sammen. 
-Under vises den genererte UML-modellen som viser hvordan meldingstypene henger sammen. 
-Hver meldingstype som har en payload har et tilhørende xsd-skjema med samme navn.
-![meldingstyper](https://raw.githubusercontent.com/ks-no/fiks-matrikkelfoering-specification/main/Schema/V2/meldingstyper/meldingstyper.svg)
+### Implementasjon og bruk av Fiks Matrikkelføring
+Forklaringer for implementering og bruk av protokollen ligger i mappen [Dokumentasjon/V2/Implementasjonsdetaljer](./Dokumentasjon/V2/Implementasjonsdetaljer/README.md) 
 
 ### Brukstilfeller
-Forklaring med tabell for brukstilfeller finner man i mappen [Dokumentasjon/V2/Brukstilfeller](./Dokumentasjon/V2/Brukstilfeller/README.md)
+Oversikt  og tabell for brukstilfeller finner man i mappen [Dokumentasjon/V2/Brukstilfeller](./Dokumentasjon/V2/Brukstilfeller/README.md)
+
+### Meldingstyper
+
+Se filen [meldingstyper.json](Schema/V2/meldingstyper/meldingstyper.json) for hvilke meldingstyper som er i denne protokollen og hvordan de henger sammen.
+Under vises den genererte UML-modellen som viser hvordan meldingstypene henger sammen.
+Hver meldingstype som har en payload har et tilhørende xsd-skjema med samme navn.
+![meldingstyper](https://raw.githubusercontent.com/ks-no/fiks-matrikkelfoering-specification/main/Schema/V2/meldingstyper/meldingstyper.svg)
 
 ### Kodelister
 

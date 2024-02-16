@@ -44,6 +44,9 @@ Under vises den genererte UML-modellen som viser hvordan meldingstypene henger s
 Hver meldingstype som har en payload har et tilhørende xsd-skjema med samme navn.
 ![meldingstyper](https://raw.githubusercontent.com/ks-no/fiks-matrikkelfoering-specification/main/Schema/V2/meldingstyper/meldingstyper.svg)
 
+### Brukstilfeller
+Forklaring med tabell for brukstilfeller finner man i mappen [Dokumentasjon/V2/Brukstilfeller](./Dokumentasjon/V2/Brukstilfeller/README.md)
+
 ### Kodelister
 
 Kodelistene er tilgjengelig hos [Geonorge](https://register.geonorge.no/kodelister).

@@ -39,10 +39,14 @@ Dokumentasjonen inneholder også genererte klassediagram for xsd-skjemaene
 
 
 ### Implementasjon og bruk av Fiks Matrikkelføring
-Forklaringer for implementering og bruk av protokollen ligger i mappen [Dokumentasjon/V2/Implementasjonsdetaljer](./Dokumentasjon/V2/Implementasjonsdetaljer/README.md) 
+Forklaringer for implementering og bruk av protokollen finner man her: [Implementasjonsdetaljer](./Dokumentasjon/V2/Implementasjonsdetaljer/README.md) 
+
+README og filer ligger under mappen  [Dokumentasjon/V2/Implementasjonsdetaljer](./Dokumentasjon/V2/Implementasjonsdetaljer)
 
 ### Brukstilfeller
-Oversikt  og tabell for brukstilfeller finner man i mappen [Dokumentasjon/V2/Brukstilfeller](./Dokumentasjon/V2/Brukstilfeller/README.md)
+Oversikt  og tabell for brukstilfeller finner man her: [Brukstilfeller](./Dokumentasjon/V2/Brukstilfeller/README.md)
+
+README og filer ligger under mappen [Dokumentasjon/V2/Brukstilfeller](./Dokumentasjon/V2/Brukstilfeller)
 
 ### Meldingstyper
 

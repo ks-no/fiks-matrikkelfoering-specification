@@ -47,7 +47,7 @@
       <xs:element name="antallWC" minOccurs="0" maxOccurs="1" nillable="true" type="xs:integer"/>
       <xs:element name="adresse" minOccurs="0" maxOccurs="1" nillable="true" type="mf:AdresseType"/>
       <xs:element name="matrikkelnummer" minOccurs="0" maxOccurs="1" nillable="true" type="mf:MatrikkelnummerType"/>
-      <xs:element name="endring" minOccurs="1" maxOccurs="1" type="mf:EndringsstatusType"/>
+      <xs:element name="endring" minOccurs="0" maxOccurs="1" type="mf:EndringsstatusType"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Bruksenhetsnummer" type="mf:BruksenhetsnummerType"/>
@@ -126,7 +126,7 @@
       <xs:element name="energiforsyning" minOccurs="0" maxOccurs="1" nillable="true" type="mf:EnergiforsyningType"/>
       <xs:element name="vannforsyning" minOccurs="0" maxOccurs="1" nillable="true" type="mf:VanntilknytningType"/>
       <xs:element name="harHeis" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean"/>
-      <xs:element name="endring" minOccurs="1" maxOccurs="1" type="mf:EndringsstatusType"/>
+      <xs:element name="endring" minOccurs="0" maxOccurs="1" type="mf:EndringsstatusType"/>
       <xs:element name="representasjonsPunkt" minOccurs="0" maxOccurs="1" nillable="true" type="fellesgeometrins:Punkt"/>
       <xs:element name="tiltakid" minOccurs="1" maxOccurs="1" type="xs:string"/>
       <xs:element name="byggIdent" minOccurs="0" maxOccurs="1" nillable="true" type="mf:ByggIdentType"/>
@@ -210,7 +210,7 @@
       <xs:element name="bruttoarealTilBolig" minOccurs="0" maxOccurs="1" nillable="true" type="xs:double"/>
       <xs:element name="bruttoarealTotalt" minOccurs="0" maxOccurs="1" nillable="true" type="xs:double"/>
       <xs:element name="bruttoarealTilAnnet" minOccurs="0" maxOccurs="1" nillable="true" type="xs:double"/>
-      <xs:element name="endring" minOccurs="1" maxOccurs="1" type="mf:EndringsstatusType"/>
+      <xs:element name="endring" minOccurs="0" maxOccurs="1" type="mf:EndringsstatusType"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Etasjeplan" type="mf:EtasjeplanType"/>

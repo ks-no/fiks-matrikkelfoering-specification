@@ -1,4 +1,4 @@
-# Kontrakter og meldingstyper for Fiks Matrikkelfoering
+# ![](KSDigital25.png) Kontrakter og meldingstyper for Fiks Matrikkelfoering
 
 Json schemas og dokumentasjon for protokollen Fiks Matrikkelføring.
 

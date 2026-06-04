@@ -30,7 +30,7 @@ jobs:
 
       - name: Trigger build
         id: trigger_build
-        uses: actions/github-script@v7
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           github-token: ${{ steps.app_token.outputs.app_token }}
           script: |
@@ -69,7 +69,7 @@ jobs:
             core.setOutput('check-run-id', String(checkRun.id));
 
       - name: Report build
-        uses: actions/github-script@v7
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           github-token: ${{ steps.app_token.outputs.app_token }}
           script: |

@@ -1,0 +1,98 @@
+name: Build models-dotnet project
+
+on:
+  push:
+
+permissions:
+  id-token: write
+  contents: read
+  checks: write
+
+# Stjålet fra java-library-build, med litt modifikasjoner.
+# github-script actions som trigger dispatch og lytter etter resultatet.
+# Kommer rundt det faktum at jobber i private repo ikke kan trigges enkelt (som reusable workflows).
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: 'Set up GitHub App'
+        id: app_token
+        uses: ks-no/github-actions-public/setup-github-app@main
+        with:
+          ks_github_app_id: ${{ secrets.KS_RUNNER_APP_ID }}
+          ks_github_app_private_key: ${{ secrets.KS_RUNNER_PRIVATE_KEY }}
+
+      - name: Checkout
+        uses: ks-no/github-actions-public/checkout@main
+        with:
+          token: ${{ steps.app_token.outputs.app_token }}
+
+      - name: Trigger build
+        id: trigger_build
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          github-token: ${{ steps.app_token.outputs.app_token }}
+          script: |
+            const targetRepo    = 'fiks-matrikkelfoering-models-dotnet'
+            const clientOwner   = context.repo.owner;
+            const clientRepo    = context.repo.repo;
+            const clientSha     = context.sha;
+            const triggerBranch = '${{ github.ref_name }}'
+
+            const { data: checkRun } = await github.rest.checks.create({
+              owner: clientOwner,
+              repo:  clientRepo,
+              name:  'Build',
+              head_sha:   clientSha,
+              status:     'in_progress',
+              started_at: new Date().toISOString(),
+              output: {
+                title:   'Build',
+                summary: `Building ${targetRepo} with specification from branch ${triggerBranch}`
+              }
+            });
+
+            await github.rest.actions.createWorkflowDispatch({
+              owner: 'ks-no',
+              repo:  targetRepo,
+              workflow_id: 'build.yml',
+              ref: 'main',
+              inputs: {
+                'trigger-branch': triggerBranch,
+                'trigger-repo': clientRepo,
+                'check-run': String(checkRun.id)
+              }
+            });
+
+            console.log(`Build triggered in ${targetRepo} (check run #${checkRun.id})`);
+            core.setOutput('check-run-id', String(checkRun.id));
+
+      - name: Report build
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          github-token: ${{ steps.app_token.outputs.app_token }}
+          script: |
+            const clientOwner = context.repo.owner;
+            const clientRepo  = context.repo.repo;
+            const checkRunId  = Number('${{ steps.trigger_build.outputs.check-run-id }}');
+            const pollIntervalMs = 20_000;
+            const maxAttempts = 60;
+            let attempts = 0;
+            let conclusion = null;
+            while (attempts < maxAttempts) {
+              await new Promise(resolve => setTimeout(resolve, pollIntervalMs));
+              const { data: updated } = await github.rest.checks.get({
+                owner: clientOwner,
+                repo:  clientRepo,
+                check_run_id: checkRunId
+              });
+              console.log(`[${++attempts}] status: ${updated.status}, conclusion: ${updated.conclusion}`);
+              if (updated.status === 'completed') {
+                conclusion = updated.conclusion;
+                break;
+              }
+            }
+            if (conclusion !== 'success') {
+              core.setFailed(`Build failed (conclusion: ${conclusion})`);
+            }
